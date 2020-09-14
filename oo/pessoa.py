@@ -8,14 +8,18 @@ class Pessoa:
         return  f'Olá {id(self)}'
 
 if __name__ == '__main__':
-    fernandes = Pessoa(nome='Fernandes')
-    felipe = Pessoa(fernandes, nome='Felipe')
-    print(Pessoa.cumprimentar(felipe))
-    print(id(felipe))
-    print(felipe.cumprimentar())
-    print(felipe.nome)
-    print(felipe.idade)
-    for filho in felipe.filhos:
+    felipe = Pessoa(nome='Felipe')
+    osmar = Pessoa(felipe, nome='Osmar')
+    print(Pessoa.cumprimentar(osmar))
+    print(id(osmar))
+    print(osmar.cumprimentar())
+    print(osmar.nome)
+    print(osmar.idade)
+    for filho in osmar.filhos:
         print(filho.nome)
+    osmar.sobrenome = 'Fernandes'
+    del osmar.filhos
+    print(osmar.__dict__)
+    print(felipe.__dict__)
 
 
